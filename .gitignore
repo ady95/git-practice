@@ -10,3 +10,6 @@ notes/
 # 운영체제가 만드는 파일
 Thumbs.db
 .DS_Store
+
+# 로그 파일
+*.log
