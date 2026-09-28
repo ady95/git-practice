@@ -1,15 +1,25 @@
 # 비밀 정보
 .env
+.env.local
+.env.*.local
 
 # 개인 메모
 notes/
 
 # 임시 파일
 *.tmp
+*.bak
+*~
 
 # 운영체제가 만드는 파일
 Thumbs.db
+desktop.ini
 .DS_Store
+._*
+
+# 편집기 설정
+.vscode/
+.idea/
 
 # 로그 파일
 *.log
