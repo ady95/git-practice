@@ -122,6 +122,47 @@
       color: var(--muted);
     }
 
+    .todo {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .todo li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .todo li:last-child {
+      border-bottom: none;
+    }
+
+    .todo .mark {
+      flex: none;
+      width: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .todo .done {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    .todo .done .mark {
+      color: var(--muted);
+    }
+
+    .todo-summary {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     footer {
       text-align: center;
       color: var(--muted);
@@ -169,6 +210,18 @@
         <h3>산책</h3>
         <p>머리가 복잡할 때는 걸으면서 생각을 정리합니다. 주말에는 한 시간씩 걷습니다.</p>
       </article>
+    </section>
+
+    <section id="todo">
+      <h2>앞으로 할 일</h2>
+      <p class="todo-summary">완료 3개 · 남은 일 2개</p>
+      <ul class="todo">
+        <li class="done"><span class="mark">✔</span><span>Git 기본 명령어(add, commit, push) 익히기</span></li>
+        <li class="done"><span class="mark">✔</span><span>GitHub에 저장소 올리기</span></li>
+        <li class="done"><span class="mark">✔</span><span>브랜치를 만들어서 작업해 보기</span></li>
+        <li><span class="mark">☐</span><span>소개 문서를 웹페이지로 바꿔 보기</span></li>
+        <li><span class="mark">☐</span><span>읽은 책 목록을 정리한 문서 추가하기</span></li>
+      </ul>
     </section>
 
     <footer>
