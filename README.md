@@ -32,6 +32,8 @@ cd git-practice
 
 Git 없이 받으려면 GitHub 저장소 페이지에서 **Code → Download ZIP**을 눌러 압축 파일로 내려받을 수 있습니다.
 
+Windows에서는 PowerShell이나 명령 프롬프트에서도 위의 명령을 그대로 사용할 수 있습니다.
+
 ## 설정 파일 만들기
 
 설정 값이 필요한 경우 예제 파일을 복사해서 `.env`를 만들고 값을 채웁니다.
