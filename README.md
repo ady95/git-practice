@@ -17,6 +17,8 @@ AI 에이전트와 함께 문서와 웹페이지를 만들며 Git과 GitHub를 �
 | [todo.md](todo.md) | 앞으로 할 일 목록 (Git 연습과 다음 목표) |
 | [books.md](books.md) | 읽은 책 목록 (제목과 저자) |
 | [index.html](index.html) | 소개 웹페이지. profile.md, hobby.md, todo.md, books.md 내용을 담았습니다 |
+| [AGENTS.md](AGENTS.md) | AI 에이전트 작업 지침 (프로젝트 설명, 규칙, 작업 후 보고 방법) |
+| [CLAUDE.md](CLAUDE.md) | Claude Code용 지침 파일. AGENTS.md를 불러옵니다 |
 | [.env.example](.env.example) | 설정 파일 예제. 복사해서 `.env`를 만들고 실제 값을 넣습니다 |
 | [.gitignore](.gitignore) | Git이 추적하지 않을 파일 목록 (`.env`, 개인 메모, 임시 파일, 로그 등) |
 
