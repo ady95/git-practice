@@ -13,7 +13,7 @@ AI 에이전트와 함께 문서와 웹페이지를 만들며 Git과 GitHub를 �
 | --- | --- |
 | [README.md](README.md) | 지금 보고 있는 저장소 안내 문서 |
 | [profile.md](profile.md) | 자기소개: 이름, 하는 일, 관심 분야 |
-| [hobby.md](hobby.md) | 취미 소개: 글쓰기 · 읽기 · 산책 |
+| [hobby.md](hobby.md) | 취미 소개: 글쓰기 · 읽기 · 산책 · 사진 찍기 |
 | [todo.md](todo.md) | 앞으로 할 일 목록 (Git 연습과 다음 목표) |
 | [books.md](books.md) | 읽은 책 목록 (제목과 저자) |
 | [index.html](index.html) | 소개 웹페이지. profile.md, hobby.md, todo.md, books.md 내용을 담았습니다 |

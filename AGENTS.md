@@ -1,7 +1,7 @@
 # git-practice 작업 지침
 
 ## 프로젝트
-- 자기소개 문서(profile.md, hobby.md, todo.md)와, 그 내용을 보여 주는 소개 웹페이지(index.html)로 이루어진 저장소입니다.
+- 자기소개 문서(profile.md, hobby.md, todo.md, books.md)와, 그 내용을 보여 주는 소개 웹페이지(index.html)로 이루어진 저장소입니다.
 - index.html은 외부 라이브러리나 인터넷 연결 없이 HTML 파일 하나로 동작해야 합니다.
 
 ## 규칙
