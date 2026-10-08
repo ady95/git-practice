@@ -21,6 +21,8 @@ AI 에이전트와 함께 문서와 웹페이지를 만들며 Git과 GitHub를 �
 | [CLAUDE.md](CLAUDE.md) | Claude Code용 지침 파일. AGENTS.md를 불러옵니다 |
 | [.env.example](.env.example) | 설정 파일 예제. 복사해서 `.env`를 만들고 실제 값을 넣습니다 |
 | [.gitignore](.gitignore) | Git이 추적하지 않을 파일 목록 (`.env`, 개인 메모, 임시 파일, 로그 등) |
+| [scripts/check.sh](scripts/check.sh) | 저장소 검사 스크립트. `bash scripts/check.sh`로 실행합니다 |
+| [.github/workflows/check.yml](.github/workflows/check.yml) | GitHub Actions 설정. Pull Request와 main push 때 검사 스크립트를 실행합니다 |
 
 `.env` 파일은 비밀 정보를 담으므로 저장소에 올리지 않습니다. `.gitignore`에 이미 등록되어 있습니다.
 
