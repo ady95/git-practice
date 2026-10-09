@@ -12,6 +12,7 @@ AI 에이전트와 함께 문서와 웹페이지를 만들며 Git과 GitHub를 �
 | 파일 | 내용 |
 | --- | --- |
 | [README.md](README.md) | 지금 보고 있는 저장소 안내 문서 |
+| [CHANGELOG.md](CHANGELOG.md) | 버전별 변경 기록 |
 | [profile.md](profile.md) | 자기소개: 이름, 하는 일, 관심 분야 |
 | [hobby.md](hobby.md) | 취미 소개: 글쓰기 · 읽기 · 산책 · 사진 찍기 |
 | [todo.md](todo.md) | 앞으로 할 일 목록 (Git 연습과 다음 목표) |
@@ -25,6 +26,31 @@ AI 에이전트와 함께 문서와 웹페이지를 만들며 Git과 GitHub를 �
 | [.github/workflows/check.yml](.github/workflows/check.yml) | GitHub Actions 설정. Pull Request와 main push 때 검사 스크립트를 실행합니다 |
 
 `.env` 파일은 비밀 정보를 담으므로 저장소에 올리지 않습니다. `.gitignore`에 이미 등록되어 있습니다.
+
+지금까지 무엇이 바뀌었는지는 [CHANGELOG.md](CHANGELOG.md)에서 볼 수 있습니다.
+
+## 작업 흐름
+
+모든 변경은 아래 순서로 진행합니다. main 브랜치에 직접 커밋하지 않습니다.
+
+1. **Issue**: 할 일이나 문제를 GitHub Issue로 등록합니다. 문제와 완료 조건을 적습니다.
+2. **브랜치**: main에서 작업 브랜치를 만듭니다. 이름에 종류와 Issue 번호를 붙입니다. (예: `fix/nav-link-14`, `feature/nav-10`, `docs/handoff-11`)
+3. **PR**: 작업을 커밋하고 push한 뒤 main으로 Pull Request를 엽니다. 본문에 `Closes #번호`를 적으면 병합할 때 Issue가 함께 닫힙니다. 변경 내용은 같은 PR에서 [CHANGELOG.md](CHANGELOG.md)에도 적습니다.
+4. **자동 검사**: PR을 열면 GitHub Actions가 `bash scripts/check.sh`를 실행합니다. 실패하면 브랜치에서 고쳐 다시 push합니다. push 전에 같은 명령을 내 컴퓨터에서 먼저 실행해 보면 좋습니다.
+5. **병합**: 검사가 통과하고 변경 내용을 검토했으면 PR을 병합합니다.
+
+원본 .md 파일을 고칠 때는 index.html의 해당 부분도 같은 PR에서 함께 맞춥니다. AI 에이전트에게 맡길 때의 규칙은 [AGENTS.md](AGENTS.md)에 있습니다.
+
+## main 보호 규칙
+
+main 브랜치에는 `main-protection` 규칙(Repository ruleset)이 적용되어 있습니다.
+
+- **PR 필수**: main에 직접 push할 수 없고, Pull Request로만 병합합니다. 승인 리뷰 수는 0개로, 혼자서도 병합할 수 있습니다.
+- **검사 통과 필수**: 자동 검사(`check`)가 통과해야 병합할 수 있습니다.
+- **강제 push 금지**: main의 기록을 덮어쓰는 `git push --force`를 막습니다.
+- **삭제 금지**: main 브랜치를 지울 수 없습니다.
+
+예외로 허용된 사람은 없으므로 저장소 관리자도 같은 규칙을 따릅니다. 규칙은 GitHub 저장소의 **Settings → Rulesets**(왼쪽 메뉴)에서 확인할 수 있습니다.
 
 ## 내려받는 방법
 
