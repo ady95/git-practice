@@ -89,6 +89,19 @@ for f in *; do
   grep -qxF -- "$f" <<< "$listed" || fail "최상위 파일 '$f'이(가) README.md의 파일 표에 없습니다."
 done
 
+# 4. index.html의 페이지 안 링크(href="#이름")가 실제로 있는 id를 가리키는지 확인
+#    href="#"처럼 이름이 빈 링크는 검사하지 않습니다.
+echo "4. index.html 페이지 안 링크가 있는 id를 가리키는지 검사"
+ids=$(read_lines index.html \
+  | grep -oE "(^|[[:space:]])id[[:space:]]*=[[:space:]]*[\"'][^\"']*[\"']" \
+  | sed -E "s/^[[:space:]]*id[[:space:]]*=[[:space:]]*[\"']//; s/[\"']$//")
+while IFS= read -r hit; do
+  [ -n "$hit" ] || continue
+  target=$(printf '%s' "${hit#*:}" | sed -E "s/^href[[:space:]]*=[[:space:]]*[\"']#//; s/[\"']$//")
+  [ -n "$target" ] || continue
+  grep -qxF -- "$target" <<< "$ids" || fail "index.html ${hit%%:*}번째 줄의 링크 '#$target'이(가) 가리키는 id가 없습니다."
+done <<< "$(read_lines index.html | grep -noE "href[[:space:]]*=[[:space:]]*[\"']#[^\"']*[\"']")"
+
 echo
 if [ "$errors" -gt 0 ]; then
   echo "검사 실패: 문제 ${errors}개"
