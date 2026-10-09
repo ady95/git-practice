@@ -58,6 +58,32 @@
       color: var(--muted);
     }
 
+    nav ul {
+      list-style: none;
+      margin: 16px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 4px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      border-color: var(--accent);
+    }
+
     section {
       background: var(--card);
       border: 1px solid var(--border);
@@ -201,6 +227,14 @@
     <header>
       <h1>홍길동</h1>
       <p>문서 작성과 기획을 하는 사람입니다.</p>
+      <nav aria-label="섹션 바로가기">
+        <ul>
+          <li><a href="#profile">자기소개</a></li>
+          <li><a href="#hobby">취미</a></li>
+          <li><a href="#todo">할 일</a></li>
+          <li><a href="#books">읽은 책</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section id="profile">
